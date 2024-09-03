@@ -1,0 +1,12 @@
+---
+import type IconType from '../../types/icon';
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+    icon: IconType;
+}
+
+const { icon } = Astro.props
+---
+
+<Icon name={icon.name} height={icon.height} width={icon.width} />

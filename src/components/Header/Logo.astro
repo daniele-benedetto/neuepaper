@@ -1,0 +1,15 @@
+---
+import type LogoType from '../../types/logo';
+import IconUi from '../Ui/IconUi.astro';
+
+interface Props {
+    logo: LogoType;
+}
+
+const { logo } = Astro.props
+
+---
+
+<a href={logo.href ?? "/"} class="text-blue-500 hover:text-blue-700">
+    <IconUi icon={logo} />
+</a>
