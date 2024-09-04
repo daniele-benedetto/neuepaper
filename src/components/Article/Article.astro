@@ -1,24 +1,22 @@
 ---
-import { Image } from 'astro:assets';
-import Immagine from '../../images/ultra-selfish-gene.avif';
 import ButtonUi from '../../components/Ui/ButtonUi.astro';
 
 const buttonProps = {
     text: 'Read more →',
-    classes: 'font-bold mt-3',
+    classes: 'font-bold mt-5 ml-auto gt-america-bold',
 }; 
 ---
 
-<article class="w-full md:w-1/2 flex flex-col border border-black h-fit">
-    <header class="flex flex-col border-b border-black">
-        <h2 class="text-2xl">Title</h2>
-        <span class="text-sm">Word by <a class="font-bold" href="#">Author</a></span>
+<article class="w-full flex flex-col h-fit border border-black ">
+    <header class="flex flex-col border-b border-black p-4">
+        <h2 class="text-xl editor-bold">Title</h2>
+        <span class="text-[12px] gt-america-light">Word by <a class="font-bold gt-america-bold" href="#">Author</a></span>
     </header>
-    <div class="flex flex-wrap justify-between border-b border-black">
-        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam. Nullam nec purus nec nunc tincidunt aliquam.</p>
+    <div class="flex flex-wrap justify-between border-b border-black  p-4">
+        <p class="text-xs editor-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam. Nullam nec purus nec nunc tincidunt aliquam.</p>
         <ButtonUi button={buttonProps} />
     </div>
     <footer class="flex">
-        <span class="text-sm border-r border-black">Lorem ipsum</span>
+        <span class="text-xs border-r border-black  py-1 px-4 gt-america-light">Lorem ipsum</span>
     </footer>
 </article>

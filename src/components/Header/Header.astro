@@ -25,16 +25,8 @@ interface Props {
 const { title, logo, issues, arrow, navs, pittogramma, navFooter, links } = Astro.props;
 ---
 
-<header class="sticky top-0 left-0 right-0 text-[12px] md:text-[14px] z-50">
+<header class="sticky top-0 left-0 right-0 text-[12px] md:text-[14px] z-50 gt-america-light bg">
     <TopHeader title={title} logo={logo} />
     <BottomHeader issues={issues} icon={arrow} links={links} />
     <Navigator navs={navs} icon={pittogramma} navFooter={navFooter} />
 </header>
-
-<style>
-    header {
-        font-family: 'GTAmericaMonoLight', serif;
-        -webkit-font-smoothing: antialiased;
-        background-color: var(--bg);
-    }
-</style>
