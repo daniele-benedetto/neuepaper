@@ -9,8 +9,14 @@ interface Props {
 const { issues } = Astro.props;
 ---
 
-<div id="issues-dropdown" class="absolute left-0 top-full flex-col hidden max-h-[calc(100vh-115px)] overflow-y-auto">
+<div id="issues-dropdown" class="absolute left-0 top-full flex-col hidden max-h-[calc(100vh-115px)] overflow-y-auto border-t border-black z-40">
     {issues.map((issue) => (
         <Issue title={issue.title} />
     ))} 
 </div>
+
+<style>
+    #issues-dropdown {
+        background-color: var(--bg);
+    }
+</style>

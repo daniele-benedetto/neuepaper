@@ -2,87 +2,27 @@ export const issues = [
     {
         title: 'Issue 1',
         date: '2021-10-01',
-    },
-    {
-        title: 'Issue 2',
-        date: '2021-10-02',
-    },
-    {
-        title: 'Issue 3',
-        date: '2021-10-03',
-    },
-    {
-        title: 'Issue 1',
-        date: '2021-10-01',
-    },
-    {
-        title: 'Issue 2',
-        date: '2021-10-02',
-    },
-    {
-        title: 'Issue 3',
-        date: '2021-10-03',
-    },
-    {
-        title: 'Issue 1',
-        date: '2021-10-01',
-    },
-    {
-        title: 'Issue 2',
-        date: '2021-10-02',
-    },
-    {
-        title: 'Issue 3',
-        date: '2021-10-03',
-    },
-    {
-        title: 'Issue 1',
-        date: '2021-10-01',
-    },
-    {
-        title: 'Issue 2',
-        date: '2021-10-02',
-    },
-    {
-        title: 'Issue 3',
-        date: '2021-10-03',
-    },
-    {
-        title: 'Issue 1',
-        date: '2021-10-01',
-    },
-    {
-        title: 'Issue 2',
-        date: '2021-10-02',
-    },
-    {
-        title: 'Issue 3',
-        date: '2021-10-03',
-    },
-    {
-        title: 'Issue 1',
-        date: '2021-10-01',
-    },
-    {
-        title: 'Issue 2',
-        date: '2021-10-02',
-    },
-    {
-        title: 'Issue 3',
-        date: '2021-10-03',
-    },
-    {
-        title: 'Issue 1',
-        date: '2021-10-01',
-    },
-    {
-        title: 'Issue 2',
-        date: '2021-10-02',
-    },
-    {
-        title: 'Issue 3',
-        date: '2021-10-03',
-    },
+        color: '#CDDFDC',
+        articles: [
+            {
+                write: 'Viktor Zhdanov',
+                title: 'The ultra-selfish gene',
+                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.",
+                href: '/articles/the-ultra-selfish-gene',
+                image: '/images/ultra-selfish-gene.avif',
+                category: 'Spotlight',
+                headline: true
+            },
+            {
+                write: 'Viktor Zhdanov',
+                title: 'The ultra-selfish gene',
+                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.",
+                href: '/articles/the-ultra-selfish-gene',
+                image: '/images/ultra-selfish-gene.avif',
+                category: 'Spotlight',
+            },
+        ]
+    }
 ];
 
 export const navs = [
