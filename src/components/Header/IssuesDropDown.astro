@@ -1,0 +1,16 @@
+---
+import type IssueType from '../../types/issue';
+import Issue from './Issue.astro';
+
+interface Props {
+    issues: IssueType[];
+}
+
+const { issues } = Astro.props;
+---
+
+<div id="issues-dropdown" class="absolute left-0 top-full flex-col hidden">
+    {issues.map((issue) => (
+        <Issue title={issue.title} />
+    ))} 
+</div>

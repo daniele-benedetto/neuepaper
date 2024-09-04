@@ -1,0 +1,25 @@
+---
+import LinkUi from '../Ui/LinkUi.astro';
+
+const links = [
+    {
+        href: "/archive",
+        text: "Archive"
+    },
+    {
+        href: "/notes",
+        text: "Notes"
+    },
+    {
+        href: "/subscribe",
+        text: "Subscribe",
+        classes: "bg-black text-white border-r"
+    }
+];
+---
+
+<div class="flex">
+    {links.map((link) => (
+        <LinkUi link={link} />
+    ))}
+</div>

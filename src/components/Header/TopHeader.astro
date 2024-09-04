@@ -1,0 +1,23 @@
+---
+import type LogoType from '../../types/logo';
+import Title from './Title.astro';
+import Logo from './Logo.astro';
+import Hamburger from './Hamburger.astro';
+
+interface Props {
+    title: string;
+    logo: LogoType;
+}
+
+const { title, logo } = Astro.props;
+---
+
+<div class="flex items-center justify-between px-10 max-w-[1472px] mx-auto">
+    <div class="w-full h-[85px] flex items-center justify-between mx-auto">
+        <Title title={title} />
+        <Logo logo={logo} />
+    </div>
+    <div class="flex items-center space-x-4">
+        <Hamburger />
+    </div>
+</div>

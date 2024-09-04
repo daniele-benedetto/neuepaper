@@ -1,0 +1,47 @@
+---
+import type IssueType from "../../types/issue";
+import type IconType from "../../types/icon";
+
+import { getMonthAndYear } from "../../utils/date";
+import ButtonUi from "../Ui/ButtonUi.astro";
+import IssuesDropDown from "./IssuesDropDown.astro";
+
+interface Props {
+    issues: IssueType[];
+    icon: IconType;
+}
+
+const { icon, issues } = Astro.props;
+
+const [issue] = issues;
+---
+
+<div class="w-full flex items-center relative h-7">
+    <ButtonUi id="button-issues" text={issue.title} icon={icon} />
+    <span class="mx-2 flex items-center">|</span>
+    <div class="text-[14px] flex items-center">{getMonthAndYear(issue.date)}</div>
+    <IssuesDropDown issues={issues} />
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const button = document.getElementById('button-issues');
+        const dropdown = document.getElementById('issues-dropdown');
+
+        function toggleDropdown(trigger: HTMLElement, dropdown: HTMLElement) {
+            const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            trigger.setAttribute('aria-expanded', String(!isExpanded));
+            dropdown.classList.toggle('hidden');
+        }
+
+        if (button && dropdown) {
+            button.addEventListener('click', () => {
+                toggleDropdown(button, dropdown);
+            });
+
+            dropdown.addEventListener('click', (event) => {
+                toggleDropdown(button, dropdown);
+            });
+        }
+    });
+</script>

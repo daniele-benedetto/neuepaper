@@ -1,0 +1,16 @@
+---
+import type IconType from '../../types/icon';
+import IconUi from './IconUi.astro';
+
+interface Props {
+    id?: string;
+    text: string;
+    icon?: IconType;
+}
+const { id = "", text, icon } = Astro.props;
+---
+
+<button id={id} class="flex items-center text-[14px]">
+    {text}
+    { icon && <IconUi icon={icon} /> }
+</button>

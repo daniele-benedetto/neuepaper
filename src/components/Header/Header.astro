@@ -1,25 +1,27 @@
 ---
-import type LogoType from '../../types/logo';
-import Title from './Title.astro';
-import Logo from './Logo.astro';
-import Hamburger from './Hamburger.astro';
+import type IssueType from "../../types/issue";
+import type IconType from "../../types/icon";
+
+import TopHeader from "./TopHeader.astro";
+import BottomHeader from "./BottomHeader.astro";
 
 interface Props {
     title: string;
-    logo: LogoType;
+    logo: IconType;
+    issues: IssueType[];
+    icon: IconType;
 }
 
-const { title, logo } = Astro.props;
+const { title, logo, issues, icon } = Astro.props;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-10">
-    <div class="flex items-center justify-between px-10 max-w-[1472px] mx-auto">
-        <div class="w-full h-[85px] flex items-center justify-between mx-auto">
-            <Title title={title} />
-            <Logo logo={logo} />
-        </div>
-        <div class="flex items-center space-x-4">
-            <Hamburger />
-        </div>
-    </div>
+    <TopHeader title={title} logo={logo} />
+    <BottomHeader issues={issues} icon={icon} />
 </header>
+
+<style>
+    header {
+        font-family: 'GTAmericaMonoLight', serif;
+    }
+</style>

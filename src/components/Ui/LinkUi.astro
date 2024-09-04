@@ -1,0 +1,23 @@
+---
+import type LinkType from '../../types/link';
+
+interface Props {
+    link: LinkType;
+}
+
+const { link } = Astro.props;
+---
+
+<a 
+    class={`flex items-center border-l border-black w-full size-[14px] text-center px-3 h-7 link-hover trasform transition-all duration-500 ${link.classes}`}
+    href={link.href}
+>
+    {link.text}
+</a>
+
+<style>
+    .link-hover:hover {
+        background-color: var(--secondary);
+        color: var(--text);
+    }
+</style>

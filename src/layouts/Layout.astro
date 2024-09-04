@@ -1,4 +1,6 @@
 ---
+import icons from  '../utils/icons';
+import { issues } from '../utils/contents';
 import Header from '../components/Header/Header.astro';
 
 interface Props {
@@ -7,12 +9,6 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-
-const logo = {
-	name: "logo",
-	width: 124,
-	height: 51,
-};
 ---
 
 <!doctype html>
@@ -25,19 +21,28 @@ const logo = {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="p-0 m-0 font-sans">
-		<Header title={title} logo={logo} />
+	<body class="p-0 m-0">
+		<Header title={title} logo={icons.logo} issues={issues} icon={icons.arrow} />
 		<slot />
 	</body>
 </html>
 
 <style is:global>
+	@font-face {
+		font-family: 'GTAmericaMonoLight';
+		src: url('/fonts/GTAmericaMonoLight.woff2') format('woff2');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
 	:root {
 		--bg: #FFF7F3;
 		--text: #000;
+		--secondary: #F4CF6F;
 	}
 	body {
 		background-color: var(--bg);
 		color: var(--text);
+		font-family: sans;
 	}
 </style>
