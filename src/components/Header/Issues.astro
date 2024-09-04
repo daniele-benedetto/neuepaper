@@ -14,10 +14,16 @@ interface Props {
 const { icon, issues } = Astro.props;
 
 const [issue] = issues;
+
+const buttonProps = {
+    id: "button-issues",
+    text: issue.title,
+    icon,
+};
 ---
 
 <div class="w-full flex items-center relative h-7">
-    <ButtonUi id="button-issues" text={issue.title} icon={icon} />
+    <ButtonUi button={buttonProps} />
     <span class="mx-2 flex items-center">|</span>
     <div class="flex items-center">{getMonthAndYear(issue.date)}</div>
     <IssuesDropDown issues={issues} />

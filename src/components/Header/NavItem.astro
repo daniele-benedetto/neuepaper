@@ -8,6 +8,6 @@ interface Props {
 const { item } = Astro.props;
 ---
 
-<li class={`h-[52px] w-full flex justify-end items-center ${item.classes}`}>
+<li class={` ${item.classes} h-[52px] flex justify-end items-center w-fit`}>
     <a href={item.href}>{item.name}</a>
 </li>

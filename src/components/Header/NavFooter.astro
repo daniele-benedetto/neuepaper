@@ -1,0 +1,27 @@
+---
+import type NavItemType from '../../types/navItem';
+import type IconType from '../../types/icon';
+
+import ButtonUi from '../Ui/ButtonUi.astro';
+import IconUi from '../Ui/IconUi.astro';
+
+interface Props {
+    icon: IconType;
+    title: string;
+    content: string;
+}
+
+const { icon, title, content } = Astro.props;
+
+const buttonProps = {
+    text: 'Read more →',
+    classes: 'font-bold mt-3',
+}; 
+---
+
+<div class="w-full flex flex-col items-baseline">
+    <IconUi icon={icon} />
+    <h4 class="font-bold uppercase mt-3">{title}</h4>
+    <p class="mt-3 leading-5">{content}</p>
+    <ButtonUi button={buttonProps} />
+</div>

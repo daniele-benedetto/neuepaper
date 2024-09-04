@@ -1,18 +1,34 @@
 ---
 import type NavItemType from '../../types/navItem';
+import type IconType from '../../types/icon';
+
 import NavItem from './NavItem.astro';
+import NavFooter from './NavFooter.astro';
 
 interface Props {
     navs: NavItemType[];
+    icon: IconType;
+    navFooter: {
+        title: string;
+        content: string;
+    };
 }
 
-const { navs } = Astro.props;
+const { navs, icon, navFooter } = Astro.props;
+
 ---
 
-<nav class="header-nav w-full max-w-[460px] border-l border-black absolute top-full right-0 h-[calc(100vh-115px)] p-[60px] flex items-center">
-    <ul class="flex flex-col items-center text-2xl w-full">
+<nav id="navigator" class="header-nav w-full max-w-[460px] border-l border-black absolute top-full -right-full h-[calc(100vh-115px)] p-[60px] flex flex-col justify-between transition-all duration-500">
+    <ul class="flex flex-col text-2xl items-end justify-center my-7">
         {navs.map((nav) => (
             <NavItem item={nav} />
         ))}
     </ul>
+    <NavFooter icon={icon} title={navFooter.title} content={navFooter.content} />
 </nav>
+
+<style>
+    #navigator.active {
+        right: 0;
+    }
+</style>

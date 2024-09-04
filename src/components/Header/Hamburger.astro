@@ -6,13 +6,17 @@
 </button>
 
 <script>
-    const button = document.getElementById('button-hamburger');
-    
-    if(button) {
-        button.addEventListener('click', () => {
-            button.classList.toggle('active');
-        });
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const button = document.getElementById('button-hamburger');
+        const navigator = document.getElementById('navigator');
+        
+        if(button && navigator) {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                navigator.classList.toggle('active');
+            });
+        }
+    });
 </script>
 
 <style>

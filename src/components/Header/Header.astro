@@ -11,17 +11,22 @@ interface Props {
     title: string;
     logo: IconType;
     issues: IssueType[];
-    icon: IconType;
+    arrow: IconType;
     navs: NavItemType[];
+    pittogramma: IconType;
+    navFooter: {
+        title: string;
+        content: string;
+    };
 }
 
-const { title, logo, issues, icon, navs } = Astro.props;
+const { title, logo, issues, arrow, navs, pittogramma, navFooter } = Astro.props;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-10 text-[14px]">
     <TopHeader title={title} logo={logo} />
-    <BottomHeader issues={issues} icon={icon} />
-    <Navigator navs={navs} />
+    <BottomHeader issues={issues} icon={arrow} />
+    <Navigator navs={navs} icon={pittogramma} navFooter={navFooter} />
 </header>
 
 <style>

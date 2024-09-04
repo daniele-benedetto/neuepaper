@@ -19,6 +19,11 @@ export const navs = [
     { name: "Films", href: "/contact" },
     { name: "Authors", href: "/services" },
     { name: "About", href: "/blog" },
-    { name: "Notes on progress", href: "/notes", classes:"text-lg border-t border-black mt-3" },
-    { name: "Books on progress", href: "/books", classes:"text-lg  h-8"}
+    { name: "Notes on Progress", href: "/notes", classes:"text-[16px] border-t border-black mt-4 pt-2" },
+    { name: "Books in Progress", href: "/books", classes:"text-[16px] !h-8 pb-2"}
 ];
+
+export const navFooter = {
+    title: "Meet Viktor",
+    content: "Although Viktor Zhdanov's name is little known today, he spearheaded one of the greatest projects in history. Who was he and what did he do?"
+}
