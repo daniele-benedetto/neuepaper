@@ -1,6 +1,7 @@
 ---
 import type IssueType from '../../types/issue';
 import type IconType from '../../types/icon';
+import type LinkType from '../../types/link';
 
 import Issues from './Issues.astro';
 import Links from './Links.astro';
@@ -8,14 +9,15 @@ import Links from './Links.astro';
 interface Props {
     issues: IssueType[];
     icon: IconType;
+    links: LinkType[];
 }
 
-const { issues, icon } = Astro.props;
+const { issues, icon, links } = Astro.props;
 ---
 
 <div class="border-y border-black">
-    <div class="max-w-[1472px] mx-auto flex justify-between items-center px-10">
+    <div class="max-w-[1472px] mx-auto flex justify-between items-center px-4 md:px-10">
     <Issues issues={issues} icon={icon} />
-    <Links />
+    <Links links={links} />
     </div>
 </div>

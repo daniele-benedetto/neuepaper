@@ -1,6 +1,6 @@
 ---
 import icons from  '../utils/icons';
-import { issues, navFooter, navs } from '../utils/contents';
+import { issues, navFooter, navs, links } from '../utils/contents';
 
 import Header from '../components/Header/Header.astro';
 
@@ -30,6 +30,7 @@ const { title, description } = Astro.props;
 			arrow={icons.arrow} 
 			navs={navs} 
 			pittogramma={icons.pittogramma}
+			links={links}
 			navFooter={navFooter}
 		/>
 		<slot />
@@ -48,6 +49,9 @@ const { title, description } = Astro.props;
 		--bg: #FFF7F3;
 		--text: #000;
 		--secondary: #F4CF6F;
+	}
+	* {
+		box-sizing: border-box;
 	}
 	body {
 		background-color: var(--bg);

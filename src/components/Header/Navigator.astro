@@ -18,8 +18,8 @@ const { navs, icon, navFooter } = Astro.props;
 
 ---
 
-<nav id="navigator" class="header-nav w-full max-w-[460px] border-l border-black absolute top-full -right-full h-[calc(100vh-115px)] p-[60px] flex flex-col justify-between transition-all duration-500">
-    <ul class="flex flex-col text-2xl items-end justify-center my-7">
+<nav id="navigator" class="header-nav w-full max-w-[460px] border-l border-black absolute top-full -right-full h-[calc(100vh-115px)] px-7 py-4 md:p-[60px] flex flex-col justify-between transition-all duration-500">
+    <ul class="flex flex-col text-xl md:text-2xl items-end justify-center md:my-7">
         {navs.map((nav) => (
             <NavItem item={nav} />
         ))}
@@ -28,6 +28,9 @@ const { navs, icon, navFooter } = Astro.props;
 </nav>
 
 <style>
+    #navigator {
+        background-color: var(--bg);
+    }
     #navigator.active {
         right: 0;
     }

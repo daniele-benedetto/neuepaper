@@ -2,6 +2,7 @@
 import type IssueType from "../../types/issue";
 import type IconType from "../../types/icon";
 import type NavItemType from "../../types/navItem";
+import type LinkType from "../../types/link";
 
 import TopHeader from "./TopHeader.astro";
 import BottomHeader from "./BottomHeader.astro";
@@ -14,18 +15,19 @@ interface Props {
     arrow: IconType;
     navs: NavItemType[];
     pittogramma: IconType;
+    links: LinkType[];
     navFooter: {
         title: string;
         content: string;
     };
 }
 
-const { title, logo, issues, arrow, navs, pittogramma, navFooter } = Astro.props;
+const { title, logo, issues, arrow, navs, pittogramma, navFooter, links } = Astro.props;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-10 text-[14px]">
+<header class="fixed top-0 left-0 right-0 z-10 text-[12px] md:text-[14px]">
     <TopHeader title={title} logo={logo} />
-    <BottomHeader issues={issues} icon={arrow} />
+    <BottomHeader issues={issues} icon={arrow} links={links} />
     <Navigator navs={navs} icon={pittogramma} navFooter={navFooter} />
 </header>
 
