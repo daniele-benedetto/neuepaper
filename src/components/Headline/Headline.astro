@@ -9,26 +9,24 @@ const buttonProps = {
 }; 
 ---
 
-<aside class="w-full md:w-1/2 px-2.5">
-    <article class="sticky top-[155px] flex flex-col">
-        <a class="w-full h-[50vh]" href="#">
-            <Image src={Immagine} alt="Immagine" class="w-full h-full object-cover" />
-        </a>
-        <div class="flex flex-col p-[30px] bg-red-200">
-            <div class="flex text-sm mb-4">
-                <span class="bg-black text-white py-1.5 px-3">
-                    <a href="#">Spotligth</a>
-                </span>
-                <span class="border border-black py-1.5 px-3">
-                    <a href="#">Category</a>
-                </span>
-            </div>
-            <h2 class="text-3xl w-full border-b border-black pb-5 mb-5">Title</h2>
-            <div class="flex flex-wrap justify-between pb-5 mb-5 border-b border-black">
-                <p class="text-sm w-full md:w-3/4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam. Nullam nec purus nec nunc tincidunt aliquam.</p>
-                <ButtonUi button={buttonProps} />
-            </div>
-            <p class="border-b border-black pb-5">Word by <a class="font-bold" href="#">Author</a></p>
+<article class="sticky top-[155px] flex flex-col">
+    <a class="w-full h-[50vh]" href="#">
+        <Image src={Immagine} alt="Immagine" class="w-full h-full object-cover" />
+    </a>
+    <div class="flex flex-col p-[30px] bg-red-200">
+        <div class="flex text-sm mb-4">
+            <span class="bg-black text-white py-1.5 px-3">
+                <a href="#">Spotligth</a>
+            </span>
+            <span class="border border-black py-1.5 px-3">
+                <a href="#">Category</a>
+            </span>
         </div>
-    </article>
-</aside>
+        <h2 class="text-3xl w-full border-b border-black pb-5 mb-5">Title</h2>
+        <div class="flex flex-wrap justify-between pb-5 mb-5 border-b border-black">
+            <p class="text-sm w-full md:w-3/4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam. Nullam nec purus nec nunc tincidunt aliquam.</p>
+            <ButtonUi button={buttonProps} />
+        </div>
+        <span class="border-b border-black pb-5">Word by <a class="font-bold" href="#">Author</a></span>
+    </div>
+</article>

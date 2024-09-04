@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 import Headline from '../components/Headline/Headline.astro';
+import Article from '../components/Article/Article.astro';
 
 const title = 'Home - Work in Progress';
 const description = 'This is a work in progress blog.';
@@ -13,11 +14,11 @@ const description = 'This is a work in progress blog.';
 >
 	<main class="w-full max-w-[1472px] mx-auto px-4 md:p-10">
 		<section class="w-full max-w-[1472px] mx-auto flex flex-wrap relative">
-			<Headline />
-			<div class="w-full md:w-1/2 px-2.5">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit
+			<aside class="w-full md:w-1/2 px-2.5">
+				<Headline />
+			</aside>
+			<div class="w-full md:w-1/2 px-2.5 flex flex-wrap">
+				<Article />
 			</div>
 		</section>
 	</main>

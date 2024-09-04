@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import Immagine from '../../images/ultra-selfish-gene.avif';
+import ButtonUi from '../../components/Ui/ButtonUi.astro';
+
+const buttonProps = {
+    text: 'Read more →',
+    classes: 'font-bold mt-3',
+}; 
+---
+
+<article class="w-full md:w-1/2 flex flex-col border border-black h-fit">
+    <header class="flex flex-col border-b border-black">
+        <h2 class="text-2xl">Title</h2>
+        <span class="text-sm">Word by <a class="font-bold" href="#">Author</a></span>
+    </header>
+    <div class="flex flex-wrap justify-between border-b border-black">
+        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc tincidunt aliquam. Nullam nec purus nec nunc tincidunt aliquam.</p>
+        <ButtonUi button={buttonProps} />
+    </div>
+    <footer class="flex">
+        <span class="text-sm border-r border-black">Lorem ipsum</span>
+    </footer>
+</article>
