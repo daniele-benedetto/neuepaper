@@ -1,23 +1,27 @@
 ---
 import type IssueType from "../../types/issue";
 import type IconType from "../../types/icon";
+import type NavItemType from "../../types/navItem";
 
 import TopHeader from "./TopHeader.astro";
 import BottomHeader from "./BottomHeader.astro";
+import Navigator from "./Navigator.astro";
 
 interface Props {
     title: string;
     logo: IconType;
     issues: IssueType[];
     icon: IconType;
+    navs: NavItemType[];
 }
 
-const { title, logo, issues, icon } = Astro.props;
+const { title, logo, issues, icon, navs } = Astro.props;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-10">
+<header class="fixed top-0 left-0 right-0 z-10 text-[14px]">
     <TopHeader title={title} logo={logo} />
     <BottomHeader issues={issues} icon={icon} />
+    <Navigator navs={navs} />
 </header>
 
 <style>

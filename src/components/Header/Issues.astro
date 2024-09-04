@@ -19,7 +19,7 @@ const [issue] = issues;
 <div class="w-full flex items-center relative h-7">
     <ButtonUi id="button-issues" text={issue.title} icon={icon} />
     <span class="mx-2 flex items-center">|</span>
-    <div class="text-[14px] flex items-center">{getMonthAndYear(issue.date)}</div>
+    <div class="flex items-center">{getMonthAndYear(issue.date)}</div>
     <IssuesDropDown issues={issues} />
 </div>
 

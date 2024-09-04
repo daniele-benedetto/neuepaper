@@ -1,0 +1,13 @@
+---
+import type NavItemType from '../../types/navItem';
+
+interface Props {
+    item: NavItemType;
+}
+
+const { item } = Astro.props;
+---
+
+<li class={`h-[52px] w-full flex justify-end items-center ${item.classes}`}>
+    <a href={item.href}>{item.name}</a>
+</li>

@@ -1,6 +1,7 @@
 ---
 import icons from  '../utils/icons';
-import { issues } from '../utils/contents';
+import { issues, navs } from '../utils/contents';
+
 import Header from '../components/Header/Header.astro';
 
 interface Props {
@@ -22,7 +23,7 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="p-0 m-0">
-		<Header title={title} logo={icons.logo} issues={issues} icon={icons.arrow} />
+		<Header title={title} logo={icons.logo} issues={issues} icon={icons.arrow} navs={navs} />
 		<slot />
 	</body>
 </html>

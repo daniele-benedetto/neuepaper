@@ -1,0 +1,18 @@
+---
+import type NavItemType from '../../types/navItem';
+import NavItem from './NavItem.astro';
+
+interface Props {
+    navs: NavItemType[];
+}
+
+const { navs } = Astro.props;
+---
+
+<nav class="header-nav w-full max-w-[460px] border-l border-black absolute top-full right-0 h-[calc(100vh-115px)] p-[60px] flex items-center">
+    <ul class="flex flex-col items-center text-2xl w-full">
+        {navs.map((nav) => (
+            <NavItem item={nav} />
+        ))}
+    </ul>
+</nav>
