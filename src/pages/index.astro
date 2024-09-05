@@ -5,6 +5,8 @@ import Layout from '../layouts/Layout.astro';
 
 import Issue from '../components/Issue/Issue.astro';
 
+const site = 'Work in Progress';
+const developer = 'Daniele Benedetto';
 const title = 'Home - Work in Progress';
 const description = 'This is a work in progress blog.';
 
@@ -13,6 +15,7 @@ const description = 'This is a work in progress blog.';
 <Layout
 	title={title}
 	description={description}
+	site={site}
 >
 	<main class="w-full max-w-[1472px] mx-auto p-0 md:p-10">
 		{issues.map((issue) => (

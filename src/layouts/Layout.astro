@@ -3,13 +3,16 @@ import icons from  '../utils/icons';
 import { issues, navFooter, navs, links } from '../utils/contents';
 
 import Header from '../components/Header/Header.astro';
+import Footer from '../components/Footer/Footer.astro';
 
 interface Props {
 	title: string;
 	description: string;
+	site: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, site } = Astro.props;
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -35,6 +38,7 @@ const { title, description } = Astro.props;
 		/>
 		<slot />
 	</body>
+	<Footer year={year} site={site} />
 </html>
 
 <style is:global>
@@ -100,3 +104,17 @@ const { title, description } = Astro.props;
 		background-color: var(--bg);
 	}
 </style>
+
+<script>
+	addEventListener('DOMContentLoaded', () => {
+		const backTop = document.getElementById('back-top');
+		if(!backTop) return;
+
+		backTop.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+	});
+</script>

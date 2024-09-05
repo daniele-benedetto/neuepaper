@@ -1,0 +1,35 @@
+---
+interface Props {
+    site: string;
+    year: number;
+}
+
+const { site, year } = Astro.props;
+---
+
+<footer class="flex flex-col w-full max-w-[1472px] mx-auto px-4 md:px-10 mb-20">
+    <div class="flex justify-between border-t py-4 border-black items-end">
+        <h4 class="editor-bold text-2xl">Contact</h4>
+        <div id="back-top" class="flex flex-col gt-america-light items-end text-[14px] cursor-pointer">
+            <span>↑</span>
+            <p>Back to top</p>
+        </div>
+    </div>
+    <div class="flex flex-col border-t py-4 border-black text-[14px]">
+        <h5 class="gt-america-light">Email</h5>
+        <p class="mt-2 editor-bold px-2">info@{site}.com</p>
+        <h5 class="gt-america-light mt-4">Subscribe</h5>
+        <ul class="mt-2 flex flex-wrap">
+            <li class="flex items-center border-r border-black px-2">
+                <a href="#" class="editor-bold">Subscribe to our newsletter</a>
+            </li>
+            <li class="flex items-center border-r border-black px-2">
+                <a href="#" class="editor-bold">Subscribe to our RSS feed</a>
+            </li>
+        </ul>
+    </div>
+    <div class="flex flex-col border-y py-4 border-black gt-america-light text-[14px]">
+        <p>{site} &copy; {year} - All rights reserved</p>
+        <p>Develop by Daniele Benedetto with Astro, TailwindCSS and ❤️</p>
+    </div>
+</footer>
