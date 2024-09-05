@@ -30,14 +30,16 @@ function getHeadlineAndArticle(articles: ArticleType[]) {
 const { headline, articles } = getHeadlineAndArticle(issue.articles);
 ---
 
-<astro-greet data-button={`button-issue-${issue.id}`} data-target={`issue-${issue.id}`}>
-    <section class="w-full max-w-[1472px] mx-auto flex flex-wrap relative mb-10">
+<astro-greet data-button={`button-issue-${issue.id}`} data-issue={`issue-${issue.id}`} data-span={`span-${issue.id}`}>
+    <section class="w-full max-w-[1472px] mx-auto flex flex-wrap relative mb-0 md:mb-10">
         <aside class="w-full md:w-1/2 flex flex-wrap">
             <Headline headline={headline} color={issue.color} title={issue.title} />
         </aside>
         <div class="w-full p-2.5 flex md:hidden" style={{ backgroundColor: issue.color }}>
-            <button id={`button-issue-${issue.id}`} class="w-full border border-black p-2.5 flex justify-center items-center gt-america-light">
-                <span class="text-xs">View {issue.title} {articles.length} {articles.length > 1 ? 'articles' : 'article'}</span>
+            <button id={`button-issue-${issue.id}`} class="w-full border border-black p-2.5 flex justify-center items-center gt-america-light text-xs">
+                <span>
+                    <span id={`span-${issue.id}`}>View</span> {issue.title} {articles.length} {articles.length > 1 ? 'articles' : 'article'}
+                </span>
             </button>
         </div>
         <div id={`issue-${issue.id}`} class="hidden w-full md:w-1/2  md:flex flex-col lg:grid lg:grid-cols-2 lg:gap-5 h-fit md:p-10 p-4">
@@ -49,29 +51,34 @@ const { headline, articles } = getHeadlineAndArticle(issue.articles);
 </astro-greet>
 
 <script>
-    class AstroGreet extends HTMLElement {
-        constructor() {
-            super();
+    document.addEventListener('DOMContentLoaded', () => {
+        class AstroGreet extends HTMLElement {
+            constructor() {
+                super();
 
-            const dataButton = this.dataset.button;
-            const dataTarget = this.dataset.target;
+                const dataButton = this.dataset.button;
+                const dataIssue = this.dataset.issue;
+                const dataSpan = this.dataset.span;
 
-            if(!dataButton || !dataTarget) {
-                return;
+                if(!dataButton || !dataIssue || !dataSpan) {
+                    return;
+                }
+
+                const button = document.getElementById(dataButton);
+                const issue = document.getElementById(dataIssue);
+                const span = document.getElementById(dataSpan);
+                
+
+                if(!button || !issue || !span) {
+                    return;
+                }
+
+                button.addEventListener('click', () => {
+                    issue.classList.toggle('hidden');
+                    span.innerText = issue.classList.contains('hidden') ? 'View' : 'Close';
+                });
             }
-
-            const button = document.getElementById(dataButton);
-            const target = document.getElementById(dataTarget);
-
-            if(!button || !target) {
-                return;
-            }
-
-            button.addEventListener('click', () => {
-                target.classList.toggle('hidden');
-            });
         }
-    }
-
-  customElements.define('astro-greet', AstroGreet);
+        customElements.define('astro-greet', AstroGreet);
+    });
 </script>
