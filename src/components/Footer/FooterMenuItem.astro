@@ -1,0 +1,13 @@
+---
+import type linkType from '../../types/link';
+
+interface Props {
+  link: linkType;
+}
+
+const { link } = Astro.props;
+---
+
+<li class="flex items-center border-r border-black px-2">
+    <a href={link.href} class="editor-bold">{link.text}</a>
+</li>

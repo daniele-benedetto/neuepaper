@@ -1,10 +1,14 @@
 ---
+import type footerMenuType from '../../types/footer';
+import FooterMenu from './FooterMenu.astro';
+
 interface Props {
     site: string;
     year: number;
+    footerMenu: footerMenuType[];
 }
 
-const { site, year } = Astro.props;
+const { site, year, footerMenu } = Astro.props;
 ---
 
 <footer class="flex flex-col w-full max-w-[1472px] mx-auto px-4 md:px-10 mb-20">
@@ -15,21 +19,24 @@ const { site, year } = Astro.props;
             <p>Back to top</p>
         </div>
     </div>
-    <div class="flex flex-col border-t py-4 border-black text-[14px]">
-        <h5 class="gt-america-light">Email</h5>
-        <p class="mt-2 editor-bold px-2">info@{site}.com</p>
-        <h5 class="gt-america-light mt-4">Subscribe</h5>
-        <ul class="mt-2 flex flex-wrap">
-            <li class="flex items-center border-r border-black px-2">
-                <a href="#" class="editor-bold">Subscribe to our newsletter</a>
-            </li>
-            <li class="flex items-center border-r border-black px-2">
-                <a href="#" class="editor-bold">Subscribe to our RSS feed</a>
-            </li>
-        </ul>
+    <FooterMenu footerMenu={footerMenu} />
     </div>
     <div class="flex flex-col border-y py-4 border-black gt-america-light text-[14px]">
         <p>{site} &copy; {year} - All rights reserved</p>
         <p>Develop by Daniele Benedetto with Astro, TailwindCSS and ❤️</p>
     </div>
 </footer>
+
+<script>
+	addEventListener('DOMContentLoaded', () => {
+		const backTop = document.getElementById('back-top');
+		if(!backTop) return;
+
+		backTop.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+	});
+</script>

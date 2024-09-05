@@ -1,0 +1,21 @@
+---
+import type footerMenuType from '../../types/footer';
+import FooterMenuItem from './FooterMenuItem.astro';
+
+interface Props {
+    footerMenu: footerMenuType[];
+}
+
+const { footerMenu } = Astro.props;
+---
+
+{footerMenu && footerMenu.length > 0 && footerMenu.map((menu) => (
+    <div class="flex flex-col border-t py-4 border-black text-[14px]">
+        <h5 class="gt-america-light">{menu.title}</h5>
+        <ul class="mt-2 flex flex-wrap">
+            {menu.links && menu.links.length > 0 && menu.links.map((link) => (
+                <FooterMenuItem link={link} />
+            ))}
+        </ul>
+    </div>
+))}

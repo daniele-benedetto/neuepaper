@@ -1,6 +1,6 @@
 ---
 import icons from  '../utils/icons';
-import { issues, navFooter, navs, links } from '../utils/contents';
+import { issues, navFooter, navs, links, footerMenu } from '../utils/contents';
 
 import Header from '../components/Header/Header.astro';
 import Footer from '../components/Footer/Footer.astro';
@@ -38,7 +38,7 @@ const year = new Date().getFullYear();
 		/>
 		<slot />
 	</body>
-	<Footer year={year} site={site} />
+	<Footer year={year} site={site} footerMenu={footerMenu} />
 </html>
 
 <style is:global>
@@ -104,17 +104,3 @@ const year = new Date().getFullYear();
 		background-color: var(--bg);
 	}
 </style>
-
-<script>
-	addEventListener('DOMContentLoaded', () => {
-		const backTop = document.getElementById('back-top');
-		if(!backTop) return;
-
-		backTop.addEventListener('click', () => {
-			window.scrollTo({
-				top: 0,
-				behavior: 'smooth'
-			});
-		});
-	});
-</script>

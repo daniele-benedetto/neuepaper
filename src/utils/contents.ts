@@ -11,102 +11,6 @@ export const issues = [
                 excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.  We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer  We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer",
                 href: '/articles/the-ultra-selfish-gene',
                 category: 'Spotlight',
-                headline: false
-            },
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
-                headline: true
-            },
-        ]
-    },
-    {
-        id: '2',
-        title: 'Issue 2',
-        date: '2025-10-01',
-        color: 'red',
-        articles: [
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.  We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer  We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
-                headline: false
-            },
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
-                headline: true
-            },
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
-                headline: false
-            },
-        ]
-    },
-    {
-        id: '4',
-        title: 'Issue 4',
-        date: '2025-10-01',
-        color: 'red',
-        articles: [
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.  We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer  We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
-                headline: false
-            },
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
-                headline: true
-            },
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
-                headline: false
-            },
-        ]
-    },
-    {
-        id: '3',
-        title: 'Issue 3',
-        date: '2025-10-01',
-        color: 'red',
-        articles: [
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.  We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer  We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer. We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
-                headline: false
-            },
-            {
-                writer: 'Viktor Zhdanov',
-                title: 'The ultra-selfish gene',
-                excerpt: "We now have the power to genetically modify entire species by inserting certain genes into them with brute force. Doing this to malaria-carrying mosquitoes could allow us to wipe out humanity’s most deadly killer.",
-                href: '/articles/the-ultra-selfish-gene',
-                category: 'Spotlight',
                 headline: true
             },
             {
@@ -151,5 +55,63 @@ export const links = [
         href: "/subscribe",
         text: "Subscribe",
         classes: "flex bg-black text-white border-r"
+    }
+];
+
+export const footerMenu = [
+    {
+        title: 'Email',
+        links: [
+            {
+                text: 'info@site.com',
+                href: 'mailto:info@site.com'
+            },
+        ]
+    },
+    {
+        title: 'Social',
+        links: [
+            {
+                text: 'Instagram',
+                href: '#'
+            },
+            {
+                text: 'Facebook',
+                href: '#'
+            },
+            {
+                text: 'Twitter',
+                href: '#'
+            },
+            {
+                text: 'LinkedIn',
+                href: '#'
+            }
+        ]
+    },
+    {
+        title: 'Subscribe',
+        links: [
+            {
+                text: 'Subscribe to our newsletter',
+                href: '#'
+            },
+            {
+                text: 'Cookie Policy',
+                href: '#'
+            },
+            {
+                text: 'Privacy Policy',
+                href: '#'
+            },
+            {
+                text: 'Terms & Conditions',
+                href: '#'
+            },
+            {
+                text: 'Ethics Policy',
+                href: '#'
+            }
+        ]
     }
 ];
