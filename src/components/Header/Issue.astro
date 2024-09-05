@@ -5,4 +5,45 @@ interface Props {
 
 const { title } = Astro.props;
 ---
-<span class="border-x border-b border-black text-center w-full h-8 flex items-center cursor-pointer p-3">{title}</span>
+<astro-greet data-btn={title}>
+    <span id={`btn-${title}`} class="border-x border-b border-black text-center w-full h-8 flex items-center cursor-pointer p-3">{title}</span>
+</astro-greet>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        class AstroGreet extends HTMLElement {
+            constructor() {
+                super();
+
+                const dataBtn = this.dataset.btn;
+
+                if(!dataBtn) {
+                    return;
+                }
+
+                const button = document.getElementById(`btn-${dataBtn}`);
+                const issue = document.querySelector(`section[data-section="section-${dataBtn}"]`);
+
+                if(!button || !issue) {
+                    return;
+                }
+
+                console.log(button, issue);
+
+                button.addEventListener('click', () => {
+                    
+                    const issuePosition = issue.getBoundingClientRect().top + window.scrollY;
+                    const scrollToPosition = issuePosition - 155;
+
+                    window.scrollTo({
+                        top: scrollToPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        }
+        customElements.define('astro-greet', AstroGreet);
+    });
+</script>
+
+

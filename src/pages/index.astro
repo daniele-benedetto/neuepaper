@@ -20,3 +20,43 @@ const description = 'This is a work in progress blog.';
 		))}
 	</main>
 </Layout>
+
+<script>
+import { getMonthAndYear } from "../utils/date";
+
+    function getSectionOnview() {
+		const sections = document.querySelectorAll('[data-section]') as NodeListOf<HTMLElement>;
+		const buttonIssue = document.getElementById('button-issue');
+		const dateIssue = document.getElementById('date-issue');
+      	let visibleDiv: HTMLElement | null = null;
+
+		if(!sections || !buttonIssue || !dateIssue) {
+			return;
+		}
+		
+		sections.forEach((section) => {
+			const rect = section.getBoundingClientRect();
+			if (rect.top <= 155 && rect.bottom >= 155) {
+				visibleDiv = section;
+			}
+		});
+
+		if (visibleDiv && (visibleDiv as HTMLElement).dataset.section) {
+			const issue = (visibleDiv as HTMLElement).dataset.section;
+			const date = (visibleDiv as HTMLElement).dataset.date;
+
+			if(!issue || !date) {
+				return;
+			}
+
+			const dateFormatted = getMonthAndYear(date);
+			const title = issue.replace('section-', '');
+
+			buttonIssue.innerHTML = title;
+			dateIssue.innerHTML = dateFormatted;
+		}
+    }
+
+    window.addEventListener("scroll", getSectionOnview);
+    window.addEventListener("load", getSectionOnview);
+</script>

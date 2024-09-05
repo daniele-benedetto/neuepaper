@@ -16,7 +16,7 @@ const { icon, issues } = Astro.props;
 const [issue] = issues;
 
 const buttonProps = {
-    id: "button-issues",
+    id: "button-issue",
     text: issue.title,
     icon,
 };
@@ -25,13 +25,13 @@ const buttonProps = {
 <div class="w-full flex items-center relative h-7">
     <ButtonUi button={buttonProps} />
     <span class="mx-2 flex items-center">|</span>
-    <div class="flex items-center">{getMonthAndYear(issue.date)}</div>
+    <div id="date-issue" class="flex items-center">{getMonthAndYear(issue.date)}</div>
     <IssuesDropDown issues={issues} />
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const button = document.getElementById('button-issues');
+        const button = document.getElementById('button-issue');
         const dropdown = document.getElementById('issues-dropdown');
 
         function toggleDropdown(trigger: HTMLElement, dropdown: HTMLElement) {

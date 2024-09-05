@@ -9,7 +9,9 @@ interface Props {
 const { button } = Astro.props;
 ---
 
-<button id={button.id} class={`flex items-center ${button.classes}`}>
-    {button.text}
+<button class={`flex items-center ${button.classes}`}>
+    <span id={button.id}>
+        {button.text}
+    </span>
     { button.icon && <IconUi icon={button.icon} /> }
 </button>

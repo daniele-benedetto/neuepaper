@@ -31,7 +31,7 @@ const { headline, articles } = getHeadlineAndArticle(issue.articles);
 ---
 
 <astro-greet data-button={`button-issue-${issue.id}`} data-issue={`issue-${issue.id}`} data-span={`span-${issue.id}`}>
-    <section class="w-full max-w-[1472px] mx-auto flex flex-wrap relative mb-0 md:mb-10">
+    <section data-section={`section-${issue.title}`} data-date={issue.date} class="w-full max-w-[1472px] mx-auto flex flex-wrap relative mb-0 md:mb-10">
         <aside class="w-full md:w-1/2 flex flex-wrap">
             <Headline headline={headline} color={issue.color} title={issue.title} />
         </aside>
