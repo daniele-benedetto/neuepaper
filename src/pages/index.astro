@@ -28,6 +28,7 @@ import { getMonthAndYear } from "../utils/date";
 		const sections = document.querySelectorAll('[data-section]') as NodeListOf<HTMLElement>;
 		const buttonIssue = document.getElementById('button-issue');
 		const dateIssue = document.getElementById('date-issue');
+		const headerPos = window.innerWidth > 768 ? 155 : 113;
       	let visibleDiv: HTMLElement | null = null;
 
 		if(!sections || !buttonIssue || !dateIssue) {
@@ -36,7 +37,7 @@ import { getMonthAndYear } from "../utils/date";
 		
 		sections.forEach((section) => {
 			const rect = section.getBoundingClientRect();
-			if (rect.top <= 155 && rect.bottom >= 155) {
+			if (rect.top <= 155 && rect.bottom >= headerPos) {
 				visibleDiv = section;
 			}
 		});

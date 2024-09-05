@@ -30,7 +30,7 @@ function getHeadlineAndArticle(articles: ArticleType[]) {
 const { headline, articles } = getHeadlineAndArticle(issue.articles);
 ---
 
-<astro-greet data-button={`button-issue-${issue.id}`} data-issue={`issue-${issue.id}`} data-span={`span-${issue.id}`}>
+<astro-articles data-button={`button-issue-${issue.id}`} data-issue={`issue-${issue.id}`} data-span={`span-${issue.id}`}>
     <section data-section={`section-${issue.title}`} data-date={issue.date} class="w-full max-w-[1472px] mx-auto flex flex-wrap relative mb-0 md:mb-10">
         <aside class="w-full md:w-1/2 flex flex-wrap">
             <Headline headline={headline} color={issue.color} title={issue.title} />
@@ -48,11 +48,11 @@ const { headline, articles } = getHeadlineAndArticle(issue.articles);
             ))}
         </div>
     </section>
-</astro-greet>
+</astro-articles>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        class AstroGreet extends HTMLElement {
+        class AstroArticles extends HTMLElement {
             constructor() {
                 super();
 
@@ -68,7 +68,6 @@ const { headline, articles } = getHeadlineAndArticle(issue.articles);
                 const issue = document.getElementById(dataIssue);
                 const span = document.getElementById(dataSpan);
                 
-
                 if(!button || !issue || !span) {
                     return;
                 }
@@ -76,9 +75,20 @@ const { headline, articles } = getHeadlineAndArticle(issue.articles);
                 button.addEventListener('click', () => {
                     issue.classList.toggle('hidden');
                     span.innerText = issue.classList.contains('hidden') ? 'View' : 'Close';
+
+                    if(!issue.classList.contains('hidden')) {
+                        const headerPos = window.innerWidth > 768 ? 155 : 113;
+                        const issuePosition = issue.getBoundingClientRect().top + window.scrollY;
+                        const scrollToPosition = issuePosition - headerPos;
+
+                        window.scrollTo({
+                            top: scrollToPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             }
         }
-        customElements.define('astro-greet', AstroGreet);
+        customElements.define('astro-articles', AstroArticles);
     });
 </script>
