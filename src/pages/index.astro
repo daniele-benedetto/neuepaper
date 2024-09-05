@@ -1,34 +1,22 @@
 ---
+import { issues } from '../utils/contents';
+
 import Layout from '../layouts/Layout.astro';
 
-import Headline from '../components/Headline/Headline.astro';
-import Article from '../components/Article/Article.astro';
-import ButtonUi from '../components/Ui/ButtonUi.astro';
+import Issue from '../components/Issue/Issue.astro';
 
 const title = 'Home - Work in Progress';
 const description = 'This is a work in progress blog.';
 
-const buttonProps = {
-	text: 'Read more →',
-	classes: 'font-bold mt-5 ml-auto gt-america-bold',
-};
 ---
 
 <Layout
 	title={title}
 	description={description}
 >
-	<main class="w-full max-w-[1472px] mx-auto px-4 md:p-10">
-		<section class="w-full max-w-[1472px] mx-auto flex flex-wrap relative mb-10">
-			<aside class="w-full md:w-1/2 px-2.5">
-				<Headline />
-			</aside>
-			<div class="w-full md:w-1/2 px-2.5 flex flex-col md:grid md:grid-cols-2 md:gap-5 h-fit">
-				<Article />
-				<Article />
-				<Article />
-				<Article />
-			</div>
-		</section>
+	<main class="w-full max-w-[1472px] mx-auto p-0 md:p-10">
+		{issues.map((issue) => (
+			<Issue issue={issue} />
+		))}
 	</main>
 </Layout>

@@ -1,0 +1,77 @@
+---
+import type IssueType from '../../types/issue';
+import type ArticleType from '../../types/article';
+
+import Headline from './Headline/Headline.astro';
+import Article from './Article/Article.astro';
+
+interface Props {
+    issue: IssueType;
+}
+
+const { issue } = Astro.props;
+
+function getHeadlineAndArticle(articles: ArticleType[]) {
+    let otherArticles;
+    let headline = articles.find((article) => article.headline);
+
+    if(!headline) {
+        return {
+            headline: articles[0],
+            articles: articles.slice(1),
+        };      
+    }
+
+    otherArticles = articles.filter((article) => !article.headline);
+
+    return { headline, articles: otherArticles };
+}
+
+const { headline, articles } = getHeadlineAndArticle(issue.articles);
+---
+
+<astro-greet data-button={`button-issue-${issue.id}`} data-target={`issue-${issue.id}`}>
+    <section class="w-full max-w-[1472px] mx-auto flex flex-wrap relative mb-10">
+        <aside class="w-full md:w-1/2 flex flex-wrap">
+            <Headline headline={headline} color={issue.color} title={issue.title} />
+        </aside>
+        <div class="w-full p-2.5 flex md:hidden" style={{ backgroundColor: issue.color }}>
+            <button id={`button-issue-${issue.id}`} class="w-full border border-black p-2.5 flex justify-center items-center gt-america-light">
+                <span class="text-xs">View {issue.title} {articles.length} {articles.length > 1 ? 'articles' : 'article'}</span>
+            </button>
+        </div>
+        <div id={`issue-${issue.id}`} class="hidden w-full md:w-1/2  md:flex flex-col lg:grid lg:grid-cols-2 lg:gap-5 h-fit md:p-10 p-4">
+            {articles && articles.length > 0 && articles.map((article) => (
+                <Article article={article} />
+            ))}
+        </div>
+    </section>
+</astro-greet>
+
+<script>
+    class AstroGreet extends HTMLElement {
+        constructor() {
+            super();
+
+            const dataButton = this.dataset.button;
+            const dataTarget = this.dataset.target;
+
+            if(!dataButton || !dataTarget) {
+                return;
+            }
+
+            const button = document.getElementById(dataButton);
+            const target = document.getElementById(dataTarget);
+
+            if(!button || !target) {
+                return;
+            }
+
+            button.addEventListener('click', () => {
+                target.classList.toggle('hidden');
+            });
+        }
+    }
+
+  customElements.define('astro-greet', AstroGreet);
+</script>

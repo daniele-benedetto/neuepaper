@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+
+import { truncateText } from '../../../utils/text';
+
+import type ArticleType from '../../../types/article';
+
+import Immagine from '../../../images/ultra-selfish-gene.avif';
+
+import ButtonUi from '../../Ui/ButtonUi.astro';
+
+const buttonProps = {
+    text: 'Read more →',
+    classes: 'font-bold mt-3 gt-america-bold !items-end',
+}; 
+
+interface Props {
+    headline: ArticleType;
+    color: string;
+    title: string;
+}
+
+const { headline, color, title } = Astro.props;
+---
+
+<article class="sticky top-[155px] flex md:flex-col flex-col-reverse"  style={{ backgroundColor: color }}>
+    <a class="w-full h-[50vh]  p-2.5 md:p-0 order-1" href="#">
+        <Image src={Immagine} alt="Immagine" class="w-full h-full object-cover" />
+    </a>
+    <div class="flex flex-col p-2.5 md:p-[30px] order-2">
+        <div class="flex text-sm mb-4 gt-america-light">
+            <span class="bg-black text-white py-1.5 px-3">
+                <a href="#">
+                    {title}
+                </a>
+            </span>
+            <span class="border border-black py-1.5 px-3">
+                <a href="#">
+                    {headline.category}
+                </a>
+            </span>
+        </div>
+        <h2 class="text-3xl w-full border-b border-black pb-5 mb-5 editor-bold">
+            {headline.title}
+        </h2>
+        <div class="flex flex-wrap justify-between pb-5 mb-5 border-b border-black">
+            <p class="text-sm w-full md:w-3/4 editor-regular">
+                {truncateText(headline.excerpt, 300)}
+            </p>
+            <ButtonUi button={buttonProps} />
+        </div>
+        <span class="border-b border-black pb-5 gt-america-light">
+            Word by <a class="gt-america-bold" href="#">
+                {headline.writer}
+                </a>
+            </span>
+    </div>
+</article>

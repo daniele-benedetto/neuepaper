@@ -1,0 +1,14 @@
+---
+interface Props {
+    data: any;
+}
+
+const { data } = Astro.props;
+
+---
+
+<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs md:text-sm" aria-label="Blocco di codice JSON formattato">
+    <code>
+        {data ? JSON.stringify(data, null, 2) : 'Nessun dato disponibile'}
+    </code>
+</pre>
