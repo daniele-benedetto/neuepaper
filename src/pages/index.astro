@@ -29,7 +29,6 @@ const issuesWithArticles: IssueType[] = issues.map((issue): IssueType => {
 			category: article.frontmatter.category,
 			headline: article.frontmatter.headline
 		} as ArticleType));
-
 	return {
 		...issue,
 		articles: issueArticles
