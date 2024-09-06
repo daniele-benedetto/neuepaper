@@ -5,5 +5,6 @@ export default interface issue {
     title: string;
     date: string;
     color: string;
+    href: string;
     articles: ArticleType[];
 }

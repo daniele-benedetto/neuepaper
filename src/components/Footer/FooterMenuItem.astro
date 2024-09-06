@@ -8,6 +8,6 @@ interface Props {
 const { link } = Astro.props;
 ---
 
-<li class="flex items-center border-r border-black px-2">
+<li class="flex items-center border-r border-black px-2 mb-1 md:mb-0">
     <a href={link.href} class="editor-bold">{link.text}</a>
 </li>

@@ -1,15 +1,40 @@
 ---
-import { issues } from '../utils/contents';
-
+import type IssueType from '../types/issue';
+import type ArticleType from '../types/article';
 import Layout from '../layouts/Layout.astro';
-
 import Issue from '../components/Issue/Issue.astro';
 
 const site = 'Work in Progress';
-const developer = 'Daniele Benedetto';
 const title = 'Home - Work in Progress';
 const description = 'This is a work in progress blog.';
 
+const issues: IssueType[] = (await Astro.glob('./issues/*.md')).map((issue) => ({
+  id: issue.frontmatter.id,
+  title: issue.frontmatter.title,
+  date: issue.frontmatter.date,
+  color: issue.frontmatter.color,
+  href: issue.frontmatter.href,
+  articles: []
+}));
+const articles = await Astro.glob('./issues/*/*.md');
+
+const issuesWithArticles: IssueType[] = issues.map((issue): IssueType => {
+	const issueArticles: ArticleType[] = articles
+		.filter((article) => article.file.includes(`/${issue.href}/`))
+		.map((article) => ({
+			title: article.frontmatter.title,
+			writer: article.frontmatter.writer,
+			excerpt: article.frontmatter.excerpt,
+			href: article.url,
+			category: article.frontmatter.category,
+			headline: article.frontmatter.headline
+		} as ArticleType));
+
+	return {
+		...issue,
+		articles: issueArticles
+	};
+});
 ---
 
 <Layout
@@ -18,7 +43,7 @@ const description = 'This is a work in progress blog.';
 	site={site}
 >
 	<main class="w-full max-w-[1472px] mx-auto p-0 md:p-10">
-		{issues.map((issue) => (
+		{issuesWithArticles.map((issue) => (
 			<Issue issue={issue} />
 		))}
 	</main>
